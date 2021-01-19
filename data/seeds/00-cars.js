@@ -17,7 +17,7 @@ exports.seed = function (knex) {
           VIN: "2FMDK4KC5DBB54343",
           make: "Chevrolet",
           model: "Camaro",
-          mileage: 500,
+          mileage: 500123,
           transmission: "Auto",
           titleStatus: "N/A",
         },

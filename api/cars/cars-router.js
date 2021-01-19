@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    const carData = await Account.get();
+    const carData = await Cars.get();
     res.status(200).json(carData);
   } catch (error) {
     next(error);
@@ -41,11 +41,11 @@ router.put("/:id", validateCarId, validateCar, async (req, res, next) => {
   }
 });
 
-router.delete("/id", validateCarId, async (req, res, next) => {
+router.delete("/:id", validateCarId, async (req, res, next) => {
   try {
     const deletedCar = await Cars.remove(req.params.id);
     res.status(200).json({
-      message: `the car with the specified id of ${req.params.id} or ${deletedCar} has been deleted from the database `,
+      message: `the car with the id of ${req.params.id} has been deleted from the database `,
     });
   } catch (error) {
     next(error);

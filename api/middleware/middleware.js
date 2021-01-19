@@ -24,7 +24,7 @@ function validateCar(req, res, next) {
   const mileage = req.body.mileage;
 
   if (Object.keys(body).length !== 0) {
-    if (vin && make && model && mileage) {
+    if (vin || make || model || mileage) {
       next();
     } else {
       res.status(400).json({
